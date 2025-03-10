@@ -1,18 +1,33 @@
 import streamlit as st
 from datetime import datetime, time
 
+st.set_page_config(
+    page_title="Assignment-1",
+    layout="wide",
+    menu_items=(
+        {
+            "Get help": "https://www.aaaa.com/help",
+            "Report a bug": "https://bbbbbb.com/bug",
+            "About": "# This is a header. This is an *extremely* cool app!",
+        }
+    ),
+)
+
 with st.container(border=True):
     st.title("Registration Form")
     col1, col2, col3 = st.columns(3)
 
     # col1
     with col1:
+        col1.metric("Temperatur", "70F", "1.2F")
         sir_name = st.selectbox("", options=("Mr", "Miss", "Mrs"))
 
     with col2:
+        col2.metric("Wind", "9 mph", "-8%")
         first_name = st.text_input("First Name")
 
     with col3:
+        col3.metric("Humidity", "86%", "4%")
         last_name = st.text_input("Last name")
 
     job = st.selectbox(
